@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     int opcion;
-
+do {
     // --- Menu de opciones ---
     cout << "SISTEMA DE CALIFICACIONES:" << endl;
     cout << "1. Registrar estudiante" << endl;
@@ -35,9 +35,9 @@ int main() {
             cout << "¿Cuantas calificaciones deseas registrar? ";
             cin >> totalCalificaciones;
 
-            if (totalCalificaciones <= 0) {
+            while (totalCalificaciones <= 0) {
                 cout << "La cantidad debe ser mayor a 0." << endl;
-                return 1;
+                cin >> totalCalificaciones;
             }
 
             float suma = 0;
@@ -107,6 +107,9 @@ int main() {
             cout << "Opcion no valida." << endl;
             break;
     }
+    
 
-    return 0;
+} while (opcion != 3);
+
+return 0;
 }
