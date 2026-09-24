@@ -25,12 +25,11 @@ int main() {
             cout << "Ingresa tu edad: ";
             cin >> edad;
 
-            if (edad <= 0 || edad > 120) {
-                cout << "Edad invalida" << endl;
-                return 1;
-            } else {
-                cout << "Tienes " << edad << " anos." << endl;
+            while (edad <= 0 || edad > 120) {
+                cout << "Edad invalidad, la edad debe de ser entre 1 y 120." << endl;
+                cin >> edad;
             }
+            cout << "Tienes " << edad << " anos." << endl;
 
             int totalCalificaciones;
             cout << "¿Cuantas calificaciones deseas registrar? ";
@@ -52,14 +51,13 @@ int main() {
                 cout << "Ingresa tu calificacion " << i + 1 << ": ";
                 cin >> calificacion;
 
-                if (calificacion < 0 || calificacion > 10) {
-                    cout << "La calificacion ingresada no es valida." << endl;
-                    return 1;
+                while (calificacion < 0 || calificacion > 10) {
+                    cout << "Calificacion invalida, debe ser entre 0 y 10." << endl;
+                    cin >> calificacion;
                 }
-
                 suma += calificacion;
 
-                if (calificacion >= 6.0f) {
+                    if (calificacion >= 6) {
                     aprobadas++;
                 } else {
                     reprobadas++;
@@ -75,7 +73,6 @@ int main() {
 
             float promedio = suma / totalCalificaciones;
 
-            // --- RESUMEN FINAL ---
             cout << "\n--- RESUMEN ---" << endl;
             cout << "Estudiante: " << name << " (" << edad << " anos)" << endl;
             cout << "Promedio final: " << promedio << endl;
